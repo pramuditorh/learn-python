@@ -1,5 +1,9 @@
-n, m = int(input()), int(input())
+n, m = [int (x) for x in input().split()]
 
-for i in range(m):
-    if m // 2:
-        print('.|.').center('-')
+l = []
+
+for i in range(n // 2):
+    l.append(('.|.' * (2*i+1)).center(m, '-'))
+
+s = '\n'.join(l)
+print(s + '\n' + 'WELCOME'.center(m, '-') + '\n' + '\n'.join(l[::-1]))
